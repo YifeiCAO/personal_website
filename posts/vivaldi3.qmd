@@ -1,0 +1,152 @@
+---
+title: "Making Vivaldi even better"
+description: "Fixing small annoyances with mods"
+author: "Luke"
+date: "10/18/2024"
+categories:
+  - software
+  - vivaldi
+image: "images/vivaldi_logo.png"
+comments:
+    utterances:
+      repo: lukmayer/site_comments
+      theme: github-dark
+      issue-term: url
+---
+
+As reported in my last Vivaldi post, there are some things that I find a bit annoying about Vivaldi.
+With a lot of software, this is where you would be stuck with the annoyances until someone bothers to fix them, but Vivaldi is a bit different.
+Vivaldi, like Firefox, supports modifications, meaning you can inject your own CSS and JavaScript into the browser to change its behavior. This is very powerful as it allows you to change almost anything about the front-end of the browser. 
+While the modding community for Vivaldi is fairly small compared to that of Firefox (smaller user base), there are still some very useful mods on the [forums](https://forum.vivaldi.net/category/52/modifications) that can be used to fix some of the annoyances I have with Vivaldi.
+
+In my case, I had two main things I was looking to fix with mods:
+
+1) I wanted the vertical tab bar to expand on hover, like it does in Brave or MS Edge. This is because dragging tabs around in a minimized vertical tab bar requires quite a bit more precision than in a nice and wide one.
+2) I want to hide the panel bar. I don't use many panels, so to me it was super annoying that the panel bar would unhide itself whenever I did use one. As reported in my other posts, this drove me to the point where I was trying to completely avoid using panels so that I would not have to deal with this anymore. 
+
+So how to go about it? Basically you just start browsing the forums for code that sounds interesting, then paste that code into a css file in a folder you point Vivaldi to. The full instructions on how to do this can be found [here](https://forum.vivaldi.net/topic/10549/modding-vivaldi).
+
+I'm afraid I did not keep track of the source posts for the mods I used, but I can provide the code I use for the mods I mentioned above.
+
+\
+
+#### Expanding vertical tab bar on hover
+
+```css
+#tabs-tabbar-container:is(.left, .right) {
+    position: fixed; 
+    height: -webkit-fill-available !important;
+    box-shadow: #0008 0 0 2px, rgb(0 0 0 / 25%) 0px 3px 6px;
+    clip-path:inset(0 -50px 0 -50px);
+    transition: .15s ease-out .1s !important;
+}
+
+#tabs-tabbar-container.left {
+    left:0;
+    z-index:1;
+}
+
+#panels-container.left ~ div > #tabs-tabbar-container.left {
+    left: unset;
+}
+
+#tabs-tabbar-container.right {
+    right:0;
+}
+
+#panels-container.right ~ #tabs-tabbar-container.right {
+    right:35px;
+}
+
+#tabs-tabbar-container.left:not(:focus-within):not(:hover) {
+    will-change: clip-path;
+    clip-path:inset(0% calc(100% - 30px) 0% 0%);
+    transition: .15s ease-out .5s !important;
+}
+
+#tabs-tabbar-container.right:not(:focus-within):not(:hover) {
+    will-change: transform;
+    transform: translateX(calc(100% - 30px));
+    transition: .15s ease-out .5s !important;
+}
+
+#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) > div.overflow .tab-strip {
+    animation: ofh 0s .5s forwards !important;
+}
+
+@keyframes ofh {to {overflow-y: hidden;}}
+
+/* newtab position */
+#tabs-tabbar-container:is(.left, .right) .newtab {
+    left: 0 !important;
+    width: 100%; transition: width .1s .1s !important;
+}
+
+#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) .newtab {
+    width: 30px;
+    transition: width 0s .5s !important;
+}
+
+/* reserved inner space for minimized tabbar by only push webview-container inward */
+#browser:not(.fullscreen).tabs-left #webview-container {
+    margin-left:30px;
+}
+
+#browser:not(.fullscreen).tabs-right #webview-container {
+    margin-right:30px;
+}
+
+/* Option 1: minimize into parent column */
+#tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) {
+    flex-direction: row;
+}
+
+/* Option 2: minimize into child column */
+/* #tabs-tabbar-container:is(.left, .right):not(:focus-within):not(:hover) {flex-direction: row-reverse;} */
+
+/* canceled left tabbar's parent's DIV width */
+#main > .inner > div:has(#tabs-tabbar-container.left) {
+    max-width: 0px;
+}
+
+/* make space for static statusbar at bottom */
+#browser:has(footer > .toolbar-statusbar) #tabs-tabbar-container {
+    margin-bottom: 24px;
+}
+
+```
+
+Now I can't vouch for the future viability of this code, so if it stops working in the future, you definitely want to be checking the forums for updated code. 
+
+\
+
+#### Hiding the panel bar
+
+```css
+/* hide panel bar */
+#panels #switch {
+    display: none;
+}
+
+#panels-container.icons {
+    display: none;
+}
+
+.panel-group .panel-collapse-guard {
+    max-width: unset !important;
+    min-width: unset !important;
+}
+
+.panel-group .panel {
+    padding: 5px 5px 0 !important;
+}
+
+```
+
+This one is so simple, your grandma could have written it!
+I'm so glad I can finally use panels again without having to manually hide UI elements every time I open one. Hurray!
+
+\
+
+So there you have it, two mods that make Vivaldi just that extra little bit nicer for me. I think it's really cool that Vivaldi allows this, since it does not only empower their users, but can also serve as inspiration for the developers to implement some of these features in the browser itself. But then again, most of the things the company does are very well thought out. I'm looking forward to seeing what they come up with next!
+

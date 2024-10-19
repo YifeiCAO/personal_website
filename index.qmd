@@ -1,0 +1,120 @@
+---
+title: ""
+description: "Lukas Mayer's personal website - PhD student researching Computational Cognitive Science and Human-AI collaboration. Also posts about Data Science/statistics, software development, tech tips, and more."
+image: "assets/luke-23.jpg"
+about:
+ template: broadside
+ links:
+   - icon: envelope
+     text: Email
+     href: mailto:willuk@vivaldi.net
+   - icon: github
+     text: Github
+     href: https://github.com/lukmayer
+   - icon: medium
+     text: Medium
+     href: https://medium.com/@willuk
+
+format: 
+  html:
+    toc: false
+back-to-top-navigation: false
+---
+
+
+<style>
+
+.about-entity {
+  position: relative;
+  width: 100px; /* Circle size */
+  height: 100px;
+  border-radius: 50%; /* Makes the element circular */
+  overflow: hidden; /* Hides any overflow */
+  border: 2px solid black; /* Optional: border */
+  background-color: black; /* Optional: background color */
+  opacity: 0; /* Start hidden for fade-in effect */
+  transition: opacity 2s ease-in; /* Fade-in effect */
+  margin-top: 60px; /* Adjust value as needed to move it down */
+}
+
+.about-entity.fade-in {
+  opacity: 1; /* Fully visible when the fade-in is applied */
+}
+
+.about-entity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Adjust width to zoom in */
+  height: 100%; /* Adjust height to zoom in */
+  background-image: url('assets/luke-23.jpg');
+  background-size: cover; /* Ensures the image covers the zoomed area */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* CSS for fade-in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 2s ease-in;
+}
+
+.content.quarto-banner-title-block {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+}
+
+.about-links {
+  align-self: flex-end; /* Positions .about-links at the bottom */
+  display: flex;
+  gap: 0px;
+  text-align: center;
+}
+
+.about-link {
+  text-decoration: none;
+  color: black; /* Link color */
+}
+
+.about-link i {
+  font-size: 24px;
+  display: block; /* Forces icon to appear above the text */
+}
+
+.about-link span {
+  display: block; /* Places text below the icon */
+}
+
+
+</style>
+
+
+<script>
+
+  window.addEventListener("load", function() {
+    var aboutEntity = document.querySelector(".about-entity");
+    aboutEntity.classList.add("fade-in");
+  });
+
+
+</script>
+
+
+
+
+# Lukas W. Mayer
+
+
+
+### Welcome to my website!
+
+{{< animate fadeIn "I'm Luke, and I'm currently a PhD Student in Cognitive Science at the University of California, Irvine." duration=4s >}}
+
+{{< animate fadeIn "In my research, I investigate the limits of human causal reasoning through Bayesian computational models. I'm particularly interested in applying these models to enhance human-AI collaboration." duration=4s >}}
+
+
+
+
+

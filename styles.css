@@ -1,0 +1,437 @@
+@font-face {
+    font-family: "AnkaCoder";
+    src: url("assets/fonts/AnkaCoder-r.ttf") format("truetype"); /* Regular */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AnkaCoder";
+    src: url("assets/fonts/AnkaCoder-b.ttf") format("truetype"); /* Bold */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "AnkaCoder";
+    src: url("assets/fonts/AnkaCoder-i.ttf") format("truetype"); /* Italic */
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "AnkaCoder";
+    src: url("assets/fonts/AnkaCoder-bi.ttf") format("truetype"); /* Bold Italic */
+    font-weight: bold;
+    font-style: italic;
+}
+
+body {
+    font-family: "AnkaCoder", monospace;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 20px; /* Increase this value as needed */
+    min-height: 100vh;
+}
+
+
+/* Start with the content invisible */
+body.preload .content.quarto-banner-title-block,
+body.preload .quarto-title-banner.page-columns.page-full,
+body.preload #quarto-content {
+    opacity: 0;
+}
+
+/* When the fadein class is added, content fades in */
+body.fadein .content.quarto-banner-title-block,
+body.fadein .quarto-title-banner.page-columns.page-full,
+body.fadein #quarto-content {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Content fades out when navigating away */
+body.fadeout .content.quarto-banner-title-block,
+body.fadeout .quarto-title-banner.page-columns.page-full,
+body.fadeout #quarto-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+/* Background image styling */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/ridges.jpg"); /* Adjust the path as needed */
+    background-size: cover; /* Cover the entire page */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Make the background fixed on scroll */
+    background-position: center; /* Center the background image */
+    filter: blur(5px); /* Adjust the blur value to achieve the desired effect */
+    z-index: -1; /* Place it behind the content */
+}
+
+
+
+p {
+    font-size: 20px; /* Paragraphs */
+}
+
+h1 {
+    font-size: 2.5em; /* Headings */
+    color: #00bf63;
+}
+
+h2 {
+    font-size: 2em;
+    color: #00bf63;
+}
+
+h3 {
+    font-size: 1.75em;
+    color: #00bf63;
+}
+
+h4 {
+    font-size: 1.5em;
+    color: #00bf63;
+}
+
+h5 {
+    font-size: 1.25em;
+    color: #00bf63;
+}
+
+h6 {
+    font-size: 1em;
+    color: #00bf63;
+}
+
+.navbar {
+    font-size: 1.1em; /* Navbar links */
+    border-radius: 20px; /* Adjust the value to change the roundness */
+}
+
+.navbar-logo {
+  height: 2em !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+/* Change bulletpoint color */
+ul > li::marker {
+    color: #00bf63; /* Replace with your desired color */
+}
+
+/* Change numbered list color */
+ol > li::marker {
+    color: #00bf63; /* Replace with your desired color */
+}
+
+.navbar-title {
+  font-size: 0.01em;
+  opacity: 0 !important;
+}
+
+.listing-title {
+    color: #00bf63; /* Replace with your desired color */
+}
+
+.circle {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid black;
+  background-color: black;
+  padding: 2px;
+}
+
+
+
+/* Inactive tabs styling */
+.nav-tabs .nav-link {
+    background-color: #1f1f1f; /* Black background for inactive tabs */
+    border: 1px solid #2f2f2f; /* Dark grey border for inactive tabs */
+    color: white; /* Text color for inactive tabs */
+}
+
+/* Active tab styling (optional) */
+.nav-tabs .nav-link.active {
+    background-color: #2f2f2f; /* Dark grey background for active tab */
+    border: 1px solid #2f2f2f; /* Dark grey border for active tab */
+    color: white; /* Text color for active tab */
+}
+
+/* Inactive tabs hover effect */
+.nav-tabs .nav-link:hover {
+    border-color: white; /* White border on hover */
+}
+
+
+
+/* Target the pagination links */
+.pagination a {
+  color: black !important; /* Set the text color to black */
+  font-weight: normal; /* Default font weight */
+  background-color: #00bf63; /* Set the background color to #00bf63 */
+  border: 4px solid #00a653; 
+  padding: 10px 15px; /* Add padding for better button appearance */
+  border-radius: 5px; /* Add border-radius to make them rounded */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Add a transition for smooth hover effect */
+}
+
+/* Change the font weight to bold on hover */
+.pagination a:hover {
+  color: black !important; /* Ensure the text remains black */
+  font-weight: bold; /* Make the text bold */
+  background-color: #00a653; /* Slightly darken the background on hover */
+  border: 4px solid #00a653; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+/* Style the active pagination link */
+.pagination .active a {
+  color: white !important; /* Set the text color to white */
+  font-weight: bold; /* Make the text bold */
+  background-color: #007b3a; /* Darken the background color for active link */
+  border: 4px solid #005b2a; /* Add a border to make the active link stand out */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add a stronger shadow */
+  transform: scale(1.0); /* Slightly enlarge the active link */
+}
+
+#quarto-sidebar {
+    background-color: transparent !important; /* Make the sidebar background transparent */
+    box-shadow: none !important; /* Remove any shadows if present */
+    border: none !important; /* Remove any borders if present */
+}
+
+
+.quarto-title-banner {
+    background-color: rgba(47, 47, 47, 0.5); /* White background with transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    padding: 20px; /* Optional: Adjust the padding */
+    border-radius: 20px;
+    margin-top: 0px; /* Adjust the top margin */
+    margin-right: 20px; /* Right margin */
+    margin-bottom: 0px; /* Bottom margin */
+    margin-left: 20px; /* Left margin */
+}
+
+#quarto-header {
+    background-color: rgba(255, 255, 255, 0); /* White background with transparency */
+    /*backdrop-filter: blur(10px); /* Apply blur effect */
+    /*-webkit-backdrop-filter: blur(10px); /* Support for Safari */
+    padding: 20px; /* Optional: Adjust the padding */
+}
+
+
+
+.navbar.navbar-expand-lg {
+    background-color: #2f2f2f; /* Semi-transparent background */
+    border: 1px solid black; /* Add a thin black border */
+}
+
+
+#quarto-back-to-top {
+    box-shadow: none; /* Remove any box shadow */
+    text-shadow: none; /* Remove any text shadow */
+    background: none; /* Remove any background styling that might cause shading */
+    border: none; /* Remove any border that might be causing a shadow effect */
+    position: fixed; /* Keep the button fixed in place */
+    bottom: 100px; /* Position it 100px from the bottom */
+    display: flex; /* Align the content inside the button properly */
+    align-items: center; /* Center align any icons or text vertically */
+    justify-content: center; /* Center align horizontally */
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: #00bf63; /* Background color */
+    border-radius: 40px; /* Round the corners */
+    color: black; /* Set text color to black */
+}
+
+
+.footer {
+    overflow: hidden; /* Ensures that the content stays within the rounded corners */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.nav-footer {
+  background-color: #2f2f2f;
+  display: flex;
+  justify-content: space-between; /* Distribute the items evenly with space between them */
+  align-items: center; /* Vertically center the child elements */
+  padding: 10px; /* Optional: Adjust padding if needed */
+}
+
+.nav-footer-left,
+.nav-footer-center,
+.nav-footer-right {
+    align-items: center; /* Vertically center content within each section */
+}
+
+/* Set the color of the links inside .nav-footer to #00bf63 */
+.nav-footer a {
+    color: #00bf63;
+    text-decoration: none; /* Optional: remove underline from links */
+}
+
+/* Apply the initial white color to the RSS button icon */
+.nav-footer .bi-rss {
+    color: white;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Change the RSS button icon color on hover */
+.nav-footer .bi-rss:hover {
+    color: #00bf63;
+}
+
+.card {
+    border-radius: 15px; /* Adjust the value for desired roundness */
+    overflow: hidden; /* Ensures the content stays within the rounded corners */
+    border: 1px solid black; /* Add a thin black border */
+}
+
+.card-img {
+    border-radius: 15px 15px 0 0; /* Apply rounding only to the top corners of the image */
+}
+
+.tab-content {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack the content vertically */
+    text-align: center; /* Center text content */
+    border-radius: 0 15px 15px 15px; /* Only apply border-radius to the bottom corners */
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: none; /* Optional: Keep the top border if needed */
+}
+
+.nav-tabs {
+    border-bottom: none; /* Removes the bottom border */
+    --bs-nav-tabs-link-active-color: none; /* Removes the active link color */
+}
+
+.tab-pane {
+    width: 100%; /* Ensure the tab-pane takes full width of the container */
+}
+
+
+/* Darken the overlay */
+.aa-DetachedOverlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker transparent background */
+}
+
+
+.tab-content {
+    background-color: #2f2f2f;
+}
+
+
+/* Start with the paginated content invisible */
+body.preload #listing-main-listing {
+    opacity: 0;
+}
+
+/* When the fadein class is added, paginated content fades in */
+body.fadein #listing-main-listing {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+/* Paginated content fades out when navigating away */
+body.fadeout #listing-main-listing {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Darken the background color of the code blocks */
+body code {
+    background-color: #3f3f3f !important; /* Dark grey background */
+    color: #c678dd !important; /* Light text color for contrast */
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+/* Add scrollbar styling */
+/* Styling for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    width: 16px; /* Increased width for the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b; /* Dark grey track */
+    border-radius: 10px; /* Rounded track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555555; /* Darker grey for the thumb */
+    border-radius: 10px; /* Rounded scrollbar thumb */
+    border: 4px solid #2b2b2b; /* Adjusted padding between thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777777; /* Lighter grey on hover */
+}
+
+/* Styling for Firefox */
+* {
+    scrollbar-width: auto; /* Default scrollbar width */
+    scrollbar-color: #555555 #2b2b2b; /* Thumb and track colors */
+}
+
+
+.quarto-grid-item {
+  transition: transform 0.3s ease-in-out; /* Adds a smooth transition for scaling */
+}
+
+.quarto-grid-item:hover {
+  transform: scale(1.05); /* Makes the item slightly larger on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow to make it more noticeable */
+}
+
+.lightbox img {
+  transition: transform 0.3s ease-in-out; /* Adds a smooth transition for scaling */
+}
+
+.lightbox:hover img {
+  transform: scale(1.1); /* Scales the image by 10% on hover */
+}
+
+/* Ensure the content starts hidden */
+.hidden {
+    opacity: 0;
+}
+  
+  /* CSS for fading in content inside the .quarto-content class */
+.quarto-content {
+    transition: opacity 2s ease-in; /* Fade-in effect */
+}
+  
+.quarto-content.fade-in {
+    opacity: 1; /* Fully visible when the fade-in is applied */
+}
+
+
+body code {
+    background-color: #2f2f2f !important;
+    color: #c678dd !important;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.sourceCode {
+    background-color: #2f2f2f;
+}

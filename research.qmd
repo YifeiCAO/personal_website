@@ -1,0 +1,81 @@
+---
+title: "Research"
+description: "Lukas Mayer's research in computational cognitive science, Human-AI collaboration. Related topics include causal reasoning, inversion problems, AI alignment, data-science, software development"
+
+---
+<style>
+.description {
+    display: none;
+}
+</style>
+
+
+\
+
+## Research Interests
+
+### 1) Computational Cognitive Science
+{{< animate fadeIn "As humans, we possess a remarkable cognitive flexibility that enables us to solve problems in various domains that are still completely intractable to modern methods in Artificial Intelligence. Therefore, I think that by studying human behavior we may be able to reverse-engineer some of the machinery that gives rise to these amazing abilities, paving the way for new kinds of algorithms."  duration=2s >}}
+
+{{< animate fadeIn "At the moment, I am working on a project series aiming to develop a computational account of causal reasoning for intervention on other agents. In these projects I will be using a considerable amount of simulation, computational modelling, and a series of custom-designed web experiments to develop reasoning models that exhibit human-like abilities to flexibly generalize to new contexts. My goal here is to show how this causal account can outperform sophisticated Reinforcement Learning models in dynamic environments, which includes most of the real world."  duration=2s >}}
+
+
+\
+
+### 2) Inversion problems in Cognitive Science
+{{< animate fadeIn "Whenever people are interacting with machine-learning based systems, (human) biases can propagate through the model leading to distorted predictions. Therefore, one strand of work I am interested in pursuing in this area is to derive the transformations that lead to better alignment, thus increasing the validity of predictions. I am also interested in addressing more engineering related concerns, such as how to use information we possess about cognition to improve the performance of machine learning algorithms trained on human-generated information. In this type of work, I like to mix and match methods from Cognitive Science and Machine Learning in combination with large, real-world data-sets."  duration=2s >}}
+
+{{< animate fadeIn "One fairly recent project I have completed in this domain was my master’s thesis. In it, I was able to show how re-weighting a feature space in line with some theory borrowed from multi-attribute multi-alternative decision-making can improve the performance of machine learning algorithms tasked with predicting human choices."  duration=2s >}}
+
+
+\
+
+
+## Publications {#publications}
+
+Karny, S., **Mayer, L. W.**, Ayoub, J., Song, M., Su, H., Tian, D., Moradi-Pari, E., & Steyvers, M. (2024). Learning with AI Assistance: A Path to Better Task Performance or Dependence? *Proceedings of the ACM Collective Intelligence Conference, 10–17*. https://doi.org/10.1145/3643562.3672610 
+
+Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., **Mayer, L. W.**, & Smyth, P. (2024). The Calibration Gap between Model and Human Confidence in Large Language Models. arXiv preprint arXiv:2401.13835. 
+
+**Mayer, L. W.**, Bocheva, D., Hinds, J., Brown, O., Piwek, L., Ellis, D. (under Review) Waste not want not: Computational methods to maximise attendance in group research. *Behavior Research Methods*. 
+
+
+
+<script>
+  window.addEventListener("load", function() {
+    var content = document.querySelector(".quarto-content");
+    if (content) {
+      content.classList.remove("hidden");  // Remove the hidden class to allow transition
+      content.classList.add("fade-in");    // Add the fade-in class for the transition effect
+    }
+  });
+</script>
+
+<style>
+
+#embedded-publications {
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+#embedded-publications * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  #embedded-publications {
+    font-size: 0.9em;
+    padding: 5px;
+  }
+
+  #embedded-publications hr {
+    margin: 10px 0;
+  }
+}
+
+</style>
+
+
