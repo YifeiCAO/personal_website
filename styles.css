@@ -357,7 +357,7 @@ body.fadeout #listing-main-listing {
 
 /* Darken the background color of the code blocks */
 body code {
-    background-color: #3f3f3f !important; /* Dark grey background */
+    background-color: #2f2f2f !important; /* Dark grey background */
     color: #c678dd !important; /* Light text color for contrast */
     padding: 4px 6px;
     border-radius: 4px;
@@ -423,15 +423,6 @@ body code {
     opacity: 1; /* Fully visible when the fade-in is applied */
 }
 
-
-body code {
-    background-color: #2f2f2f !important;
-    color: #c678dd !important;
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-.sourceCode {
+body div.sourceCode {
     background-color: #2f2f2f;
 }

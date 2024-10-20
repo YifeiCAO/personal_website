@@ -8,10 +8,10 @@ echo "Enter a commit message:"
 read commit_message
 
 #remove .git files
-rm -rf .git
+#rm -rf .git
 
 # Initialize a new Git repository
-git init
+#git init
 
 
 # --- Push source files to the main repository (lukmayer/website.git) ---
@@ -52,7 +52,7 @@ git push -f origin master:gh-pages  # Ensure that 'gh-pages' is the correct bran
 cd ..
 
 # Clean up: Remove the .git directory inside _site to avoid conflicts in the future
-rm -rf _site/.git
+#rm -rf _site/.git
 
 
 
