@@ -33,7 +33,7 @@ description: "Lukas Mayer's research in computational cognitive science, Human-A
 
 ## Publications {#publications}
 
-Karny, S., **Mayer, L. W.**, Ayoub, J., Song, M., Su, H., Tian, D., Moradi-Pari, E., & Steyvers, M. (2024). Learning with AI Assistance: A Path to Better Task Performance or Dependence? *Proceedings of the ACM Collective Intelligence Conference, 10–17*. https://doi.org/10.1145/3643562.3672610 
+Karny, S., **Mayer, L. W.**, Ayoub, J., Song, M., Su, H., Tian, D., Moradi-Pari, E., & Steyvers, M. (2024). Learning with AI Assistance: A Path to Better Task Performance or Dependence? *Proceedings of the ACM Collective Intelligence Conference, 10–17*. 
 
 Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., **Mayer, L. W.**, & Smyth, P. (2024). The Calibration Gap between Model and Human Confidence in Large Language Models. arXiv preprint arXiv:2401.13835. 
 
