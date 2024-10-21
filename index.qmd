@@ -24,16 +24,6 @@ back-to-top-navigation: false
 
 <style>
 
-/* Adjust the image size in the Jolla template */
-.about-entity img {
-  width: 100%; /* Allow image to grow to full width of the container */
-  max-width: 500px; /* Set the maximum width of the image */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 20px; /* Add some space below the image */
-}
-
-
-
 
 /* Flexbox layout for .about-entity */
 .about-entity {
