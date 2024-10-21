@@ -25,17 +25,14 @@ back-to-top-navigation: false
 <style>
 
 /* Adjust the image size in the Jolla template */
-img {
+.about-entity img {
   width: 100%; /* Allow image to grow to full width of the container */
-  max-width: 300px; /* Set the maximum width of the image */
+  max-width: 500px; /* Set the maximum width of the image */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 20px; /* Add some space below the image */
 }
 
-/* Optional: Adjust only specific images (e.g., profile pictures) */
-.about-entity img {
-  max-width: 400px; /* Increase the max width for specific images */
-}
+
 
 
 /* Flexbox layout for .about-entity */

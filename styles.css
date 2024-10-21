@@ -121,7 +121,7 @@ h6 {
 
 .navbar-logo {
     height: 2em !important; /* Set the logo height */
-    margin-top: 15px; /* Move the logo down by 10px */
+    margin-top: 0px; /* Move the logo down by 10px */
     max-width: unset !important;
     max-height: unset !important;
     display: inline-block;
