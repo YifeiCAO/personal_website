@@ -3,7 +3,7 @@ title: ""
 description: "Lukas Mayer's personal website - PhD student researching Computational Cognitive Science and Human-AI collaboration. Also posts about Data Science/statistics, software development, tech tips, and more."
 image: "assets/luke-23-circle.png"
 about:
- template: broadside
+ template: jolla
  links:
    - icon: envelope
      text: Email
@@ -23,7 +23,21 @@ back-to-top-navigation: false
 
 
 <style>
-  
+
+/* Adjust the image size in the Jolla template */
+img {
+  width: 100%; /* Allow image to grow to full width of the container */
+  max-width: 300px; /* Set the maximum width of the image */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add some space below the image */
+}
+
+/* Optional: Adjust only specific images (e.g., profile pictures) */
+.about-entity img {
+  max-width: 400px; /* Increase the max width for specific images */
+}
+
+
 /* Flexbox layout for .about-entity */
 .about-entity {
   display: flex;
@@ -75,26 +89,6 @@ back-to-top-navigation: false
   flex-direction: column; /* Stack elements vertically */
 }
 
-.about-links {
-  align-self: flex-end; /* Positions .about-links at the bottom */
-  display: flex;
-  gap: 0px;
-  text-align: center;
-}
-
-.about-link {
-  text-decoration: none;
-  color: black; /* Link color */
-}
-
-.about-link i {
-  font-size: 24px;
-  display: block; /* Forces icon to appear above the text */
-}
-
-.about-link span {
-  display: block; /* Places text below the icon */
-}
 
 
 </style>
