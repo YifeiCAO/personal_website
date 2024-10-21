@@ -23,13 +23,14 @@ back-to-top-navigation: false
 
 
 <style>
-
+  
 /* Flexbox layout for .about-entity */
 .about-entity {
   display: flex;
   align-items: center; /* Vertically align image and text */
   flex-wrap: wrap; /* Allow wrapping for small screens */
   justify-content: flex-start; /* Ensure image and text are aligned to the left */
+  overflow: hidden; /* Prevent overflow if the content exceeds container size */
 }
 
 
@@ -41,13 +42,21 @@ back-to-top-navigation: false
   }
 
   .about-entity img {
+    width: 100%; /* Scale image to the width of the container */
+    max-width: 150px; /* Prevent the image from growing too large */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: contain; /* Ensure the entire image is visible inside the container */
     margin-right: 0; /* Remove right margin when stacked */
     margin-bottom: 15px; /* Add space below the image */
   }
 }
 
 
-
+/* Add some container-specific styling to prevent cropping */
+.about-entity img {
+  max-width: 100%; /* Ensure image fits within the container */
+  object-fit: contain; /* Maintain image aspect ratio and prevent cropping */
+}
 
 .about-entity.fade-in {
   opacity: 1; /* Fully visible when the fade-in is applied */
