@@ -23,8 +23,8 @@ description: "Lukas Mayer's mini biography, and his hobbies and interests - exer
   });
 </script>
 
-:::{.column-body-outset}
 
+:::{.column-body-outset}
 ## Short biography
 
 Hi, I'm Luke, or more formally known as Lukas.
