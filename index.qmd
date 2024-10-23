@@ -112,6 +112,37 @@ back-to-top-navigation: false
     transform: scale(1.2); /* Slightly increase size on hover */
 }
 
+@media (max-width: 768px) {
+  /* Adjust the layout for mobile screens (small screens) */
+  
+  .columns {
+    flex-direction: column; /* Stack the columns vertically on mobile */
+  }
+
+  .column {
+    width: 100% !important; /* Make each column take up full width on mobile */
+    padding: 0; /* Adjust padding for mobile */
+  }
+
+  /* Make the button links stack vertically with some spacing */
+  .button-link {
+    display: block;
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  /* Adjust the logo size for smaller screens */
+  .navbar-logo {
+    height: 3em !important; /* Increase the logo size on mobile */
+  }
+
+  /* Adjust font sizes for smaller screens */
+  .navbar-title {
+    font-size: 1.5rem; /* Adjust the font size */
+  }
+}
+
+
 </style>
 
 
