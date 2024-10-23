@@ -12,7 +12,7 @@ listing:
   filter-ui: [title, date]
   categories: true
   feed: true
-  page-size: 3
+  page-size: 6
 format: 
   html:
     toc: false
