@@ -10,7 +10,8 @@ description: "Lukas Mayer's research in computational cognitive science, Human-A
 </style>
 
 
-\
+
+:::{.column-page}
 
 ## Research Interests
 
@@ -39,7 +40,7 @@ Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., **Mayer, L. W
 
 **Mayer, L. W.**, Bocheva, D., Hinds, J., Brown, O., Piwek, L., Ellis, D. (under Review) Waste not want not: Computational methods to maximise attendance in group research. *Behavior Research Methods*. 
 
-
+:::
 
 <script>
   window.addEventListener("load", function() {

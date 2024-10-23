@@ -1,70 +1,74 @@
 ---
-title: ""
+title: "Lukas W. Mayer"
 description: "Lukas Mayer's personal website - PhD student researching Computational Cognitive Science and Human-AI collaboration. Also posts about Data Science/statistics, software development, tech tips, and more."
-image: "assets/luke-23-circle.png"
-about:
- template: jolla
- links:
-   - icon: envelope
-     text: Email
-     href: mailto:willuk@vivaldi.net
-   - icon: github
-     text: Github
-     href: https://github.com/lukmayer
-   - icon: medium
-     text: Medium
-     href: https://medium.com/@willuk
+#image: "assets/luke-23-circle.png"
+# about:
+#  template: jolla
+#  links:
+#    - icon: envelope
+#      text: Email
+#      href: mailto:willuk@vivaldi.net
+#    - icon: github
+#      text: Github
+#      href: https://github.com/lukmayer
+#    - icon: medium
+#      text: Medium
+#      href: https://medium.com/@willuk
 
 format: 
   html:
     toc: false
+    anchor-sections: false 
 back-to-top-navigation: false
 ---
 
 
+
+:::{.column-page}
+
+\
+
+:::: {.columns}
+
+::: {.column width="40%" style="padding-right: 20px;"}
+![](assets/luke-23-circle.png)
+:::
+
+::: {.column width="60%" style="padding-left: 20px;"}
+
+### Welcome to my website!
+
+{{< animate fadeIn "I'm Luke, and I'm currently a PhD Student in Cognitive Science at the University of California, Irvine." duration=4s >}}
+
+{{< animate fadeIn "In my research, I investigate the limits of human causal reasoning through Bayesian computational models. I'm particularly interested in applying these models to enhance human-AI collaboration." duration=4s >}}
+
+\
+
+<div style="display: flex; gap: 20px;">
+
+<a href="mailto:willuk@vivaldi.net" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
+    <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 8px;"></i>E-Mail
+</a>
+
+<a href="https://github.com/lukmayer" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
+    <i class="bi bi-github" style="font-size: 1.5rem; margin-right: 8px;"></i>Github
+</a>
+
+<a href="https://medium.com/@willuk" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
+    <i class="bi bi-medium" style="font-size: 1.5rem; margin-right: 8px;"></i>Medium
+</a>
+
+</div>
+
+:::
+
+::::
+
+:::
+
+
+
 <style>
-
-
-/* Flexbox layout for .about-entity */
-.about-entity {
-  display: flex;
-  align-items: center; /* Vertically align image and text */
-  flex-wrap: wrap; /* Allow wrapping for small screens */
-  justify-content: flex-start; /* Ensure image and text are aligned to the left */
-  overflow: hidden; /* Prevent overflow if the content exceeds container size */
-}
-
-
-/* Responsive behavior for narrow screens */
-@media screen and (max-width: 600px) {
-  .about-entity {
-    flex-direction: column; /* Stack the image and text vertically */
-    align-items: center; /* Center the content */
-  }
-
-  .about-entity img {
-    width: 100%; /* Scale image to the width of the container */
-    max-width: 150px; /* Prevent the image from growing too large */
-    height: auto; /* Maintain the aspect ratio */
-    object-fit: contain; /* Ensure the entire image is visible inside the container */
-    margin-right: 0; /* Remove right margin when stacked */
-    margin-bottom: 15px; /* Add space below the image */
-  }
-}
-
-
-/* Add some container-specific styling to prevent cropping */
-.about-entity img {
-  max-width: 100%; /* Ensure image fits within the container */
-  object-fit: contain; /* Maintain image aspect ratio and prevent cropping */
-}
-
-.about-entity.fade-in {
-  opacity: 1; /* Fully visible when the fade-in is applied */
-}
-
-
-
 /* CSS for fade-in effect */
 .fade-in {
   opacity: 0;
@@ -76,7 +80,37 @@ back-to-top-navigation: false
   flex-direction: column; /* Stack elements vertically */
 }
 
+.columns {
+    column-gap: 20px; /* Adjust the gap between columns */
+}
 
+.column {
+    padding-right: 10px; /* Optional: Add padding to the columns if needed */
+}
+
+
+.quarto-title {
+    margin: 0; /* Ensure no default margin */
+    text-align: left; /* Center the title text */
+}
+
+
+.button-link {
+    background-color: #222; /* Default button background */
+    color: white; /* Default text color */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    padding: 10px 20px; /* Padding for the button look */
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none; /* No underline */
+}
+
+.button-link:hover {
+    background-color: #444 !important; /* Change to lighter color on hover */
+    transform: scale(1.2); /* Slightly increase size on hover */
+}
 
 </style>
 
@@ -87,22 +121,14 @@ back-to-top-navigation: false
     var aboutEntity = document.querySelector(".about-entity");
     aboutEntity.classList.add("fade-in");
   });
-
-
 </script>
 
 
 
 
-# Lukas W. Mayer
 
 
 
-### Welcome to my website!
-
-{{< animate fadeIn "I'm Luke, and I'm currently a PhD Student in Cognitive Science at the University of California, Irvine." duration=4s >}}
-
-{{< animate fadeIn "In my research, I investigate the limits of human causal reasoning through Bayesian computational models. I'm particularly interested in applying these models to enhance human-AI collaboration." duration=4s >}}
 
 
 

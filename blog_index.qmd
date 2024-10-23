@@ -4,7 +4,7 @@ description: "Lukas Mayer's personal blog - tech tips, life-style recommendation
 listing:
   id: main-listing
   type: grid
-  grid-columns: 2
+  grid-columns: 3
   fields: [image, date, title, description, reading-time]
   contents: posts
   sort: "date desc"
@@ -12,13 +12,14 @@ listing:
   filter-ui: [title, date]
   categories: true
   feed: true
-  page-size: 4
+  page-size: 6
 format: 
   html:
     toc: false
 ---
 
 <div class="quarto-content hidden">
+</div>
 
 <style>
 .description {
@@ -27,28 +28,7 @@ format:
 </style>
 
 
-<script>
 
-// Move categories to the sidebar once the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", function() {
-    // Find the element containing the categories
-    var categoryContent = document.querySelector("#quarto-margin-sidebar");
-
-    // Find the sidebar where we want to move the categories
-    var sidebar = document.querySelector("#quarto-sidebar");
-
-    // Move the content to the sidebar without changing any positioning
-    if (categoryContent && sidebar) {
-        sidebar.appendChild(categoryContent);
-
-        // Ensure no additional styles are applied that affect the layout
-        categoryContent.style.position = "static"; // Keep it in normal flow
-        categoryContent.style.transition = "none"; // Disable any transitions
-    }
-});
-
-
-</script>
 
 <script>
   window.addEventListener("load", function() {
@@ -60,18 +40,18 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 </script>
 
-
+:::{.column-page-inset-left}
 {{< animate zoomIn "A dedicated space for me to rant!" duration=2s >}}
-
 
 :::{#main-listing}
 :::
+
 
 Follow my blog with RSS
 <a href="blog_index.xml" target="_blank">
     <i class="bi bi-rss"></i>
 </a>
 
+:::
 
-</div>
 

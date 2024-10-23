@@ -5,6 +5,7 @@ description: "Lukas Mayer's mini biography, and his hobbies and interests - exer
 
 
 <div class="quarto-content hidden">
+</div>
 
 <style>
 .description {
@@ -21,6 +22,9 @@ description: "Lukas Mayer's mini biography, and his hobbies and interests - exer
     }
   });
 </script>
+
+:::{.column-body-outset}
+
 ## Short biography
 
 Hi, I'm Luke, or more formally known as Lukas.
@@ -80,7 +84,8 @@ I spent a very fun year working in the Applied Digital Behaviour Lab at the Univ
 
 \
 
+:::
 
-</div>
+
 
 

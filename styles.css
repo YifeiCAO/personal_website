@@ -121,11 +121,22 @@ h6 {
 
 .navbar-logo {
     height: 2em !important; /* Set the logo height */
-    margin-top: 0px; /* Move the logo down by 10px */
+    margin-top: 0px; /* Align the logo properly */
     max-width: unset !important;
     max-height: unset !important;
     display: inline-block;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
+
+.navbar-logo:hover {
+    transform: scale(1.15); /* Slight pulse effect (5% increase) */
+}
+
+.navbar-brand-container {
+    position: relative;
+    overflow: visible;
+}
+
 
 /* Change bulletpoint color */
 ul > li::marker {
@@ -216,16 +227,27 @@ ol > li::marker {
 
 
 .quarto-title-banner {
-    background-color: rgba(47, 47, 47, 0.5); /* White background with transparency */
+    background-color: rgba(47, 47, 47, 0.5); /* Background with transparency */
     backdrop-filter: blur(10px); /* Apply blur effect */
-    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
-    padding: 20px; /* Optional: Adjust the padding */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 20px; /* Padding */
     border-radius: 20px;
-    margin-top: 0px; /* Adjust the top margin */
-    margin-right: 20px; /* Right margin */
-    margin-bottom: 0px; /* Bottom margin */
-    margin-left: 20px; /* Left margin */
+    margin-top: 0px; /* Adjust margins */
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
+
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    text-align: center; /* Center text inside the banner */
 }
+
+.quarto-title {
+    margin: 0; /* Ensure no default margin */
+    text-align: center; /* Center the title text */
+}
+
 
 #quarto-header {
     background-color: rgba(255, 255, 255, 0); /* White background with transparency */
@@ -266,12 +288,12 @@ ol > li::marker {
 }
 
 .nav-footer {
-  background-color: #2f2f2f;
-  display: flex;
-  justify-content: space-between; /* Distribute the items evenly with space between them */
-  align-items: center; /* Vertically center the child elements */
-  padding: 10px; /* Optional: Adjust padding if needed */
-}
+    background-color: rgba(47, 47, 47, 0.6); /* Semi-transparent background */
+    display: flex;
+    justify-content: space-between; /* Distribute the items evenly with space between them */
+    align-items: center; /* Vertically center the child elements */
+    padding: 10px; /* Optional: Adjust padding if needed */
+  }
 
 .nav-footer-left,
 .nav-footer-center,
@@ -279,10 +301,9 @@ ol > li::marker {
     align-items: center; /* Vertically center content within each section */
 }
 
-/* Set the color of the links inside .nav-footer to #00bf63 */
-.nav-footer a {
+/* Set the color of the links inside .nav-footer to #00bf63 on hover*/
+.nav-footer a:hover {
     color: #00bf63;
-    text-decoration: none; /* Optional: remove underline from links */
 }
 
 /* Apply the initial white color to the RSS button icon */
@@ -293,6 +314,17 @@ ol > li::marker {
 
 /* Change the RSS button icon color on hover */
 .nav-footer .bi-rss:hover {
+    color: #00bf63;
+}
+
+/* apply the initial white color to the code-slash button icon */
+.nav-footer .bi-code-slash {
+    color: white;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Change the code-slash button icon color on hover */
+.nav-footer .bi-code-slash:hover {
     color: #00bf63;
 }
 
@@ -428,3 +460,5 @@ body code {
 body div.sourceCode {
     background-color: #2f2f2f;
 }
+
+
