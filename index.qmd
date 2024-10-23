@@ -44,7 +44,7 @@ back-to-top-navigation: false
 
 \
 
-<div style="display: flex; gap: 20px;">
+<div class="button-group" style="display: flex; gap: 20px;">
 
 <a href="mailto:willuk@vivaldi.net" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
     <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 8px;"></i>Email
@@ -112,6 +112,13 @@ back-to-top-navigation: false
     transform: scale(1.2); /* Slightly increase size on hover */
 }
 
+/* Default desktop view */
+.button-group {
+    display: flex; /* Keep the buttons in a row by default */
+    gap: 20px; /* Space between buttons */
+}
+
+
 @media (max-width: 768px) {
   /* Adjust the layout for mobile screens (small screens) */
   
@@ -129,7 +136,14 @@ back-to-top-navigation: false
     display: block;
     width: 100%; /* Make buttons full width */
     margin-bottom: 10px; /* Add space between buttons */
+    text-align: center;
   }
+
+  .button-group {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        gap: 10px; /* Space between buttons when stacked */
+        width: 100%; /* Ensure the group takes full width */
+    }
 
 }
 
