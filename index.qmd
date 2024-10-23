@@ -47,7 +47,7 @@ back-to-top-navigation: false
 <div style="display: flex; gap: 20px;">
 
 <a href="mailto:willuk@vivaldi.net" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
-    <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 8px;"></i>E-Mail
+    <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 8px;"></i>Email
 </a>
 
 <a href="https://github.com/lukmayer" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
@@ -131,15 +131,6 @@ back-to-top-navigation: false
     margin-bottom: 10px; /* Add space between buttons */
   }
 
-  /* Adjust the logo size for smaller screens */
-  .navbar-logo {
-    height: 3em !important; /* Increase the logo size on mobile */
-  }
-
-  /* Adjust font sizes for smaller screens */
-  .navbar-title {
-    font-size: 1.5rem; /* Adjust the font size */
-  }
 }
 
 
