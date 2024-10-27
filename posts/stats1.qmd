@@ -2,7 +2,7 @@
 title: "Math-Stats: Properties of Expectation, Variance and Covariance"
 description: "Some reflections and lecture notes"
 author: "Luke"
-date: "25/10/2024"
+date: "2024-10-26"
 categories:
   - statistics
   - math
