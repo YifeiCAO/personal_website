@@ -1,5 +1,5 @@
 ---
-title: "Math-Stats: Properties of Expectation and Variance"
+title: "Math-Stats: Properties of Expectation, Variance and Covariance"
 description: "Some reflections and lecture notes"
 author: "Luke"
 date: "25/10/2024"
@@ -12,7 +12,6 @@ comments:
       repo: lukmayer/site_comments
       theme: github-dark
       issue-term: url
-draft: true
 ---
 
 Ever since learning about research methods as an undergrad,
@@ -25,7 +24,7 @@ what the degrees of freedom were for the test statistic, how to perform the comp
 and how to interpret the result. 
 This certainly helped me be more confident in my data analysis,
 but I still did not feel like I actually deeply understood what was going on,
-relying mostly on verbal rules I was taught to make decisions about my data. 
+relying mostly on verbal rules and formulas I was taught to make decisions about my data. 
 
 Similarly, in my Master's I was taking a lot of computer science courses,
 but again the teaching was pretty applied besides a bit of a math crash course that was meant to catch us up to the pure CS students.
@@ -35,21 +34,21 @@ I decided then, especially because I was planning to do computational cognitive 
 that I should start teaching myself math. 
 
 Over the last 3 years, I worked through the basics of most topics you'd cover in a high-school or general education curriculum at college mostly with the help of KhanAcademy, Coursera, and some textbooks. 
-I basically just tried to do whatever I could at the end of my work day, even if its just a few exercises on KhanAcademy, and I made this my daily ritual. 
+I basically just tried to do whatever I could at the end of my work day, even if its just a few exercises on KhanAcademy. I made this my daily ritual, and stuck with it fairly strongly until very recently. 
 I can't claim that this has turned me into a math wizard, 
 I definetely have knowledge gaps and I'm neither as fast nor as precise as I'd like to be... but I'm starting to see why the nerds like this stuff... ;)
 
 Now that I started my PhD, I'm in the interesting position where I actually just happen to have the option to take graduate level mathematical statistics courses from a fully fledged statistics department. 
 Taking advantage of this is actually pretty attractive, as those willing to persist with it can totally earn an MSc in Stats as part of their PhD in another department. 
 Little first-year me, just having landed in the US, signed up for the first course. 
-"Wow, this is pretty different to what I've seen before". 
+First reaction: "Wow, this is pretty different to what I've seen before". 
 I did not know how to do any of the derivations that my first homework asked me for. 
 I panicked and dropped the course. I did not feel ready for this. 
 I decided to take a step back, I needed a better plan to be able to pull this off. 
 After all, I am lacking **years** of experience compared to the average person in a Stats PhD program.
 
 I learned that in the US, it's expected that you consult with the lecturer when you don't understand things.
-A bit of a culture shock. 
+Perhaps a bit of a culture shock. 
 Things here are clearly a bit different than in the UK, were you would have very little interaction with your lecturers outside of class. 
 So maybe my approach was a less than good one from the very beginning. 
 I started asking lecturers and students who had done the MSc for tips on how to prepare. 
@@ -70,3 +69,95 @@ At the same time, wow is it satisfying to actually come up with a correct proof 
 So this is where I start talking about the thing this post is meant to be about. 
 I thought, what better way to do some revision for my mid-term and keep my blog alive in this busy time than to write up some of the things I'm learning as little stats blog posts? 
 I'll probably keep these short and sweet (except this one), limited to information I am confident is correct.
+
+\
+
+## Expectation
+
+I'll skip the definition of expectation and Random Variables for now, and just go to the properties.
+
+\
+
+Let $c$ be a constant, let $g(Y)$ be a function of the continuous random variable $Y$:
+
+1. $E[c] = c$
+2. $E[cY] = cE[Y]$
+3. $E[g_1(Y) + g_2(Y)] = E[g_1(Y)] + E[g_2(Y)]$
+
+\
+
+In statistics, we often want $E[g(Y)]$ where $g(Y) = (Y - \mu)^2$. In this case:
+
+$$Var(Y) = E[(Y - \mu)^2]$$
+
+This also implies:
+
+$$Var(Y) = E[Y^2] - \mu^2$$
+
+
+\
+
+## Variance
+
+Definition of Variance:
+$$ Var(Y) = E[(Y - E(Y))^2] = E(Y^2) - (E(Y))^2 = \sigma^2_Y $$
+
+1. Variance is always non-negative: $Var(Y) \geq 0$
+2. Constants have zero variance: $Var(c) = 0$
+3. Variance scales with constants: $Var(cY) = c^2 Var(Y)$ [^1]
+  
+[^1]: This is easily forgotten. The reason you square is because the deviations are squared in the definition of variance.
+
+The general case for the variance of a sum of random variables is:
+
+$$Var(Y_1 + Y_2) = Var(Y_1) + Var(Y_2) + 2Cov(Y_1, Y_2)$$
+
+Where $Cov(Y_1, Y_2)$ is the covariance of $Y_1$ and $Y_2$. 
+
+I'll cover covariance in a bit, so hold on tight!
+
+
+When summing independent random variables, the general case simplifies to:
+
+$$Var(Y_1 + Y_2) = Var(Y_1) + Var(Y_2)$$
+
+Similarly, when deriving the variance of a difference:
+
+$$Var(Y_1 - Y_2) = Var(Y_1) + Var(Y_2) - 2Cov(Y_1, Y_2)$$
+
+And for independent random variables:
+
+$$Var(Y_1 - Y_2) = Var(Y_1) + Var(Y_2)$$
+
+
+Another thing good to know with sums and variance is:
+
+$$Var(\sum_{i=1}^{n} Y_i) = \sum_{i=1}^{n} Var(Y_i)$$
+
+## Covariance
+
+Definition of Covariance:
+
+$$Cov(Y_1, Y_2) = E[(Y_1 - E(Y_1))(Y_2 - E(Y_2))]$$
+
+$$ = E(Y_1Y_2) - E(Y_1)E(Y_2)$$
+
+Let $a$, $b$, $c$ be constants:
+
+1. Covariance is symmetric: $Cov(Y_1, Y_2) = Cov(Y_2, Y_1)$
+2. Covariance is linear: $Cov(aY_1 + bY_2) = aCov(Y_1, Y_1) + bCov(Y_1, Y_2) = abCov(Y_1, Y_2)$
+3. Constants are dropped: $Cov(Y_1+c, Y_2+c) = Cov(Y_1, Y_2)$
+4. Relationship to variance: $Cov(Y, Y) = Var(Y)$
+
+Much like before, sums can be pulled out:
+
+$$Cov(\sum_{i=1}^{n} Y_i, \sum_{j=1}^{m} Z_j) = \sum_{i=1}^{n} \sum_{j=1}^{m} Cov(Y_i, Z_j)$$
+
+
+\
+
+Hopefully, this is helpful to someone out there who is also trying to get a handle on their MathStats crash course...
+
+Let's hope I can start 'thriving' rather than 'surviving' in due time :)
+
+Wish me luck!
