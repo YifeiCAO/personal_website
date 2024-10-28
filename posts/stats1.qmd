@@ -127,7 +127,9 @@ $$Var(Y_1 - Y_2) = Var(Y_1) + Var(Y_2) - 2Cov(Y_1, Y_2)$$
 
 And for independent random variables:
 
-$$Var(Y_1 - Y_2) = Var(Y_1) + Var(Y_2)$$
+$$Var(Y_1 - Y_2) = Var(Y_1) + Var(Y_2)$$ [^2]
+
+[^2]: Note the plus!
 
 
 Another thing good to know with sums and variance is:
