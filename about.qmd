@@ -25,6 +25,8 @@ description: "Lukas Mayer's mini biography, and his hobbies and interests - exer
 
 
 :::{.column-body-outset}
+
+::: {.animate__animated .animate__fadeIn}
 ## Short biography
 
 Hi, I'm Luke, or more formally known as Lukas.
@@ -83,6 +85,8 @@ I spent a very fun year working in the Applied Digital Behaviour Lab at the Univ
 4) **Gaming** - I was quite the avid gamer as a teen, spending countless hours on the likes of Team Fortress 2, Minecraft and Guild Wars 2. I don't actively play much these days, but I still like to keep up with the industry. Perhaps I'm just waiting for the next big thing to come along. I also really enjoy going to boardgame cafés and completing escape rooms!
 
 \
+
+:::
 
 :::
 
