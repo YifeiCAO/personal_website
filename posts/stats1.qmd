@@ -1,5 +1,5 @@
 ---
-title: "Math-Stats: Properties of Expectation, Variance and Covariance"
+title: "Math-Stats: Properties of Expectation, Variance, and Covariance"
 description: "Some reflections and lecture notes"
 author: "Luke"
 date: "2024-10-26"
@@ -145,7 +145,7 @@ $$ = E(Y_1Y_2) - E(Y_1)E(Y_2)$$
 Let $a$, $b$, $c$ be constants:
 
 1. Covariance is symmetric: $Cov(Y_1, Y_2) = Cov(Y_2, Y_1)$
-2. Covariance is linear: $Cov(aY_1 + bY_2) = aCov(Y_1, Y_1) + bCov(Y_1, Y_2) = abCov(Y_1, Y_2)$
+2. Covariance is linear: $Cov(aY_1 + bY_2) = abCov(Y_1, Y_2)$
 3. Constants are dropped: $Cov(Y_1+c, Y_2+c) = Cov(Y_1, Y_2)$
 4. Relationship to variance: $Cov(Y, Y) = Var(Y)$
 
