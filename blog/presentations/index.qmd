@@ -18,10 +18,7 @@ format:
     buttons: true
     controls: true
     touch: true
-    embed-resources: true  
-
-    
-draft: true        
+    embed-resources: true       
 ---
 
 # Simple Linear Regression basics

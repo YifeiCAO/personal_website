@@ -1,8 +1,8 @@
 ---
-title: "Math-Stats: Properties of Expectation, Variance, and Covariance"
+title: "Math-Stats: Linear Regression"
 description: "Some reflections and lecture notes"
 author: "Luke"
-date: "2024-10-26"
+date: "2024-11-04"
 categories:
   - statistics
   - math
@@ -21,7 +21,7 @@ If in doubt, clear site_libs/revealjs and render anew
 Make sure that chalkbord is disabled
 also dont try wrapping the presentation in ::: syntax - it will probably break the slides
 
-<iframe src="presentations/index.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+<iframe src="../../presentations/index.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
 
 
 
