@@ -28,36 +28,58 @@ format:
 
 @keyframes rainbowText {
     0% {
-        color: #FF0000; /* Bright red */
+        color: #FF0000;
+        border-color: #FF0000;
     }
     16% {
-        color: #FFA500; /* Bright orange */
+        color: #FFA500;
+        border-color: #FFA500;
     }
     33% {
-        color: #FFFF00; /* Bright yellow */
+        color: #FFFF00;
+        border-color: #FFFF00;
     }
     50% {
-        color: #00FF00; /* Bright green */
+        color: #00FF00;
+        border-color: #00FF00;
     }
     66% {
-        color: #00BFFF; /* Bright blue */
+        color: #00BFFF;
+        border-color: #00BFFF;
     }
     83% {
-        color: #FF00FF; /* Magenta */
+        color: #FF00FF;
+        border-color: #FF00FF;
     }
     100% {
-        color: #FF0000; /* Return to bright red for looping */
+        color: #FF0000;
+        border-color: #FF0000;
     }
 }
 
-
-.rainbow-animation {
-    animation: rainbowText 10s infinite;
-    display: inline-block; /* Ensure icon and text are treated together */
+.rainbow-animation a {
+    animation: rainbowText 10s infinite linear;
+    color: #FF0000; /* Initial color to match animation */
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px; /* Adjust padding for button-like appearance */
+    border: 2px solid; /* Border will take color from animation */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #000000; /* Dark grey background */
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold; /* Bold text for emphasis */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
 }
 
-.rainbow-animation i {
-    animation: rainbowText 10s infinite; /* Apply the animation to the icon */
+.rainbow-animation a:hover {
+    transform: scale(1.05); /* Slightly enlarge the button */
+    background-color: #222; /* Darker grey background on hover */
+}
+
+.rainbow-animation a i {
+    animation: rainbowText 10s infinite linear; /* Ensure icon animates as well */
+    margin-left: 5px; /* Add space between text and icon */
 }
 </style>
 
@@ -83,9 +105,8 @@ format:
 :::
 
 ::: {.rainbow-animation}
-Follow my blog with RSS
 <a href="blog_index.xml" target="_blank">
-    <i class="bi bi-rss"></i>
+    Follow my blog with RSS <i class="bi bi-rss"></i>
 </a>
 :::
 :::
