@@ -1,0 +1,27 @@
+---
+title: "Math-Stats: Properties of Expectation, Variance, and Covariance"
+description: "Some reflections and lecture notes"
+author: "Luke"
+date: "2024-10-26"
+categories:
+  - statistics
+  - math
+image: "images/grid.jpg"
+comments:
+    utterances:
+      repo: lukmayer/site_comments
+      theme: github-dark
+      issue-term: url
+
+
+draft: true
+---
+
+If in doubt, clear site_libs/revealjs and render anew
+Make sure that chalkbord is disabled
+also dont try wrapping the presentation in ::: syntax - it will probably break the slides
+
+<iframe src="presentations/index.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
+
+
+

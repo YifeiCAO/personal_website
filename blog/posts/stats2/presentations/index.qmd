@@ -1,0 +1,135 @@
+---
+title: "Stats 210: Midterm Revision"
+author: "Luke"
+format: 
+  revealjs:
+    navigation-mode: linear
+    center: true
+    incremental: true
+    scrollable: true
+    transition: slide
+    background-transition: fade
+    transition-speed: default
+    #chalkboard: true #this breaks the slides when embedded
+    theme: dark
+    slide-number: true
+    show-slide-number: print
+    preview-links: true
+    buttons: true
+    controls: true
+    touch: true
+    embed-resources: true          
+---
+
+# Simple Linear Regression basics
+
+## Definitions
+- Deterministic regression equation: $E(y|x) = \beta_0 + \beta_1x$
+- Stochastic regression equation: $y = \beta_0 + \beta_1x + \epsilon$
+- Simple regression line: $E(y|x) = \beta_0 + \beta_1x$
+- Estimated regression line: $\hat{y} = \hat{\beta_0} + \hat{\beta_1}x$
+- Estimated regression model: $\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i + e_i$
+
+
+## Assumptions of SLR
+- Expectation of errors: $E(\epsilon) = 0$
+- Variance of errors: $Var(\epsilon) = \sigma^2$
+- Independence of errors: $Cov(\epsilon_i, \epsilon_j) = 0$ 
+- [**Stricter**] Normality of errors: $\epsilon \overset{i.i.d.}{\sim} N(0, \sigma^2)$ 
+
+
+## SLR with least squares
+- Fitted values: $\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i$
+- Residuals: $e_i = y_i - \hat{y_i}$
+- SSE/RSS: $\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat{y_i})^2$
+  - can be rewritten as $SSE = S_{yy} - \frac{S_{xy}^2}{Sxx}$
+
+
+## SLR equations
+- $\hat{\beta_1} = \frac{S_{xy}}{S_{xx}}$
+- $\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}$
+
+
+## Properties of SLR
+- $E(y_i) = \beta_0 + \beta_1x_i$
+- $Var(y_i) = Var(\epsilon_i) = \sigma^2$
+- $Cov(y_i, y_j) = 0$ for $i \neq j$
+- $y_i \sim N(\beta_0 + \beta_1x_i, \sigma^2)$
+- $Cov(y_i, y_j) = 0$ for $i \neq j$
+
+## Properties of regression line
+- $\sum_{i=1}^n e_i = 0$
+- $\sum_{i=1}^n e_i^2$ is a minimum
+- $\sum_{i=1}^n y_i = \sum_{i=1}^n \hat{y_i}$
+- $\sum_{i=1}^n x_ie_i = 0$
+- $\sum_{i=1}^n \hat{y_i}e_i = 0$
+
+## How to estimate $\sigma^2$?
+- $s^2 = \hat{\sigma^2} = \frac{SSE}{n-2} = \frac{\sum_{i=1}^n e_i^2}{n-2}$
+- This is because to get $\hat{y_i}$, we use 2 parameters $\hat{\beta_0}$ and $\hat{\beta_1}$
+
+## The six number summary
+- $S_{xx} = \sum_{i=1}^n x_i^2  - n\bar{x}^2$
+- $S_{xy} = \sum_{i=1}^n x_iy_i - n\bar{x}\bar{y}$
+- $S_{yy} = \sum_{i=1}^n y_i^2 - n\bar{y}^2$
+- Therefore, knowing $n$, $\bar{x}$, $\bar{y}$, $\sum_{i=1}^n x_i^2$, $\sum_{i=1}^n y_i^2$, $\sum_{i=1}^n x_iy_i$ is enough to calculate $\hat{\beta_0}$ and $\hat{\beta_1}$
+
+
+# Confidence intervals 
+
+## Conceptual understanding
+- Confidence intervals are used to describe the variance in the parameter estimates
+- The confidence interval is a range of values that is likely to contain the true value of the parameter
+- CI = statistic $\pm$ (multiplier $\times$ se(statistic))
+- The multiplier is determined by the confidence level and the distribution of the statistic
+- The standard error of the statistic is a measure of the variability of the statistic
+- SE(estimator) = $\sqrt{Var(estimator)}$
+
+
+## Confidence intervals for $\beta_0$ and $\beta_1$ 
+- $\hat{\beta_0}$ = estimate when $x = 0$
+- $\hat{\beta_1}$ = change in $\hat{y}$ for a 1 unit change in $x$
+- We need to know $E(\hat{\beta_k})$ and $Var(\hat{\beta_k})$ to construct CIs where $k = 0, 1$
+- To derive the distribution, we rely on $\epsilon \overset{i.i.d.}{\sim} N(0, \sigma^2)$ 
+
+
+## Distribution and CI of $\hat{\beta_1}$, given $\sigma^2$  
+- $$\frac{\hat{\beta_1} - \beta_1}{\sqrt{Var(\hat{\beta_1})}} = \frac{\hat{\beta_1} - \beta_1}{\sqrt{\frac{\sigma^2}{S_{xx}}}} \sim N(0,1)$$
+- Therefore the 100(1-$\alpha$)% CI for $\beta_1$ is $$\hat{\beta_1} \pm z_{1-\alpha/2}\frac{\sigma}{\sqrt{\sum_i^N (x_i - \bar{x})^2}} $$
+
+##  Distribution and CI of $\hat{\beta_1}$ when $\sigma^2$ is unknown
+- It can be shown that the when $\sigma^2$ is unknown (and needs to be estimated with $s^2$), the distribution of $\hat{\beta_1}$ is a t-distribution with $n-2$ degrees of freedom
+- The 100(1-$\alpha$)% CI for $\beta_1$ thus is $$\hat{\beta_1} \pm t_{1-\alpha/2; n-2}\frac{s}{\sqrt{\sum_i^N (x_i - \bar{x})^2}} $$
+
+## Distribution and CI of $\hat{\beta_0}$, given $\sigma^2$
+- $$\hat{\beta_0} \sim N(\beta_0, \sigma^2\left[\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right])$$
+- The 100(1-$\alpha$)% CI for $\beta_0$ is $$\hat{\beta_0} \pm z_{1-\alpha/2}\times \sigma\sqrt{\left[\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right]}$$
+
+## Distribution and CI of $\hat{\beta_0}$ when $\sigma^2$ is unknown
+- It can be shown that the when $\sigma^2$ is unknown (and needs to be estimated with $s^2$), the distribution of $\hat{\beta_0}$ is a t-distribution with $n-2$ degrees of freedom
+- The 100(1-$\alpha$)% CI for $\beta_0$ thus is $$\hat{\beta_0} \pm t_{1-\alpha/2; n-2}\times s\sqrt{\left[\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right]}$$
+
+# Hypothesis testing 
+
+# Prediction 
+
+# ANOVA
+
+# Data transformations
+
+
+<!-- 
+
+::: {.panel-tabset}
+
+### Tab A
+
+Content for `Tab A`
+
+### Tab B
+
+Content for `Tab B`
+
+:::
+
+-->

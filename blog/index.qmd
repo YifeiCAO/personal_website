@@ -105,7 +105,7 @@ format:
 :::
 
 ::: {.rainbow-animation}
-<a href="blog_index.xml" target="_blank">
+<a href="/blog/index.xml" target="_blank">
     Follow my blog with RSS <i class="bi bi-rss"></i>
 </a>
 :::
