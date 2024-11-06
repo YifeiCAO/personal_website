@@ -18,8 +18,8 @@ draft: true
 ---
 
 If in doubt, clear site_libs/revealjs and render anew
-Make sure that chalkbord is disabled
-also dont try wrapping the presentation in ::: syntax - it will probably break the slides
+Make sure that chalkbord is disabled - things will break
+also wrap the presentation in ::: syntax at your own risk - it will probably break the slides
 
 <iframe src="../../presentations/index.html" width="800" height="600" frameborder="0" allowfullscreen></iframe>
 

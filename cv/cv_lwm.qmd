@@ -27,16 +27,6 @@ format:
   
 ---
 
-<!-- 
-when the html output starts getting too large for github:
-pip install git-filter-repo
-git filter-repo --invert-path --path _site/cv_lwm.html --force
-then re-render and push
-
-above does not fix this, instead you have to disable rendering a self-contained html file 
-especially if you dont plan on using the html file for anything
--->
-
 <!-- TITLE -->
 \begin{huge}\begin{center}{\bf Lukas William Mayer}\end{center}\end{huge}
 

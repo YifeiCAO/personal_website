@@ -1,19 +1,6 @@
 ---
 title: "Lukas W. Mayer"
 description: "Lukas Mayer's personal website - PhD student researching Computational Cognitive Science and Human-AI collaboration. Also posts about Data Science/statistics, software development, tech tips, and more."
-#image: "assets/luke-23-circle.png"
-# about:
-#  template: jolla
-#  links:
-#    - icon: envelope
-#      text: Email
-#      href: mailto:willuk@vivaldi.net
-#    - icon: github
-#      text: Github
-#      href: https://github.com/lukmayer
-#    - icon: medium
-#      text: Medium
-#      href: https://medium.com/@willuk
 
 format: 
   html:
