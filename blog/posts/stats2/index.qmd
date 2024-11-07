@@ -1,8 +1,8 @@
 ---
 title: "Math-Stats: Linear Regression"
-description: "Some reflections and lecture notes"
+description: "Linear regression via RevealJS"
 author: "Luke"
-date: "2024-11-04"
+date: "2024-11-06"
 categories:
   - statistics
   - math
