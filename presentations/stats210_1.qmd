@@ -1,29 +1,26 @@
 ---
-title: "Stats 210: Midterm Revision"
+title: "Math Stats: Simple Linear Regression"
 author: "Luke"
 format: 
   revealjs:
-    navigation-mode: linear
+    navigation-mode: vertical
     center: true
     incremental: true
     scrollable: true
     transition: slide
     background-transition: fade
     transition-speed: default
-    #chalkboard: true #this breaks the slides when embedded
     theme: dark
     slide-number: true
     show-slide-number: print
     preview-links: true
+    chalkboard: true
     buttons: true
     controls: true
-    touch: true
-    embed-resources: true       
+    touch: true       
 ---
 
-# Simple Linear Regression basics
-
-## Definitions
+# Simple Linear Regression definitions
 - Deterministic regression equation: $E(y|x) = \beta_0 + \beta_1x$
 - Stochastic regression equation: $y = \beta_0 + \beta_1x + \epsilon$
 - Simple regression line: $E(y|x) = \beta_0 + \beta_1x$
@@ -31,14 +28,14 @@ format:
 - Estimated regression model: $\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i + e_i$
 
 
-## Assumptions of SLR
+# Assumptions of SLR
 - Expectation of errors: $E(\epsilon) = 0$
 - Variance of errors: $Var(\epsilon) = \sigma^2$
 - Independence of errors: $Cov(\epsilon_i, \epsilon_j) = 0$ 
 - [**Stricter**] Normality of errors: $\epsilon \overset{i.i.d.}{\sim} N(0, \sigma^2)$ 
 
 
-## SLR with least squares
+# SLR with least squares
 - Fitted values: $\hat{y_i} = \hat{\beta_0} + \hat{\beta_1}x_i$
 - Residuals: $e_i = y_i - \hat{y_i}$
 - SSE/RSS: $\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat{y_i})^2$
@@ -50,7 +47,7 @@ format:
 - $\hat{\beta_0} = \bar{y} - \hat{\beta_1}\bar{x}$
 
 
-## Properties of SLR
+# Properties of SLR
 - $E(y_i) = \beta_0 + \beta_1x_i$
 - $Var(y_i) = Var(\epsilon_i) = \sigma^2$
 - $Cov(y_i, y_j) = 0$ for $i \neq j$
@@ -64,11 +61,11 @@ format:
 - $\sum_{i=1}^n x_ie_i = 0$
 - $\sum_{i=1}^n \hat{y_i}e_i = 0$
 
-## How to estimate $\sigma^2$?
-- $s^2 = \hat{\sigma^2} = \frac{SSE}{n-2} = \frac{\sum_{i=1}^n e_i^2}{n-2}$
+# How to estimate $\sigma^2$?
+- $s^2 = \hat{\sigma}^2 = \frac{SSE}{n-2} = \frac{\sum_{i=1}^n e_i^2}{n-2}$
 - This is because to get $\hat{y_i}$, we use 2 parameters $\hat{\beta_0}$ and $\hat{\beta_1}$
 
-## The six number summary
+# The six number summary
 - $S_{xx} = \sum_{i=1}^n x_i^2  - n\bar{x}^2$
 - $S_{xy} = \sum_{i=1}^n x_iy_i - n\bar{x}\bar{y}$
 - $S_{yy} = \sum_{i=1}^n y_i^2 - n\bar{y}^2$
@@ -76,14 +73,11 @@ format:
 
 
 # Confidence intervals 
-
-## Conceptual understanding
 - Confidence intervals are used to describe the variance in the parameter estimates
 - The confidence interval is a range of values that is likely to contain the true value of the parameter
 - CI = statistic $\pm$ (multiplier $\times$ se(statistic))
 - The multiplier is determined by the confidence level and the distribution of the statistic
-- The standard error of the statistic is a measure of the variability of the statistic
-- SE(estimator) = $\sqrt{Var(estimator)}$
+- The standard error of the statistic is a measure of the variability of the statistic $SE(estimator) = \sqrt{Var(estimator)}$
 
 
 ## Confidence intervals for $\beta_0$ and $\beta_1$ 
@@ -110,12 +104,44 @@ format:
 - The 100(1-$\alpha$)% CI for $\beta_0$ thus is $$\hat{\beta_0} \pm t_{1-\alpha/2; n-2}\times s\sqrt{\left[\frac{1}{n} + \frac{\bar{x}^2}{S_{xx}}\right]}$$
 
 # Hypothesis testing 
+- State $H_0$ and $H_1$
+- Choose a test statistic
+  - This describes the degree to which the sample deviates from the null hypothesis 
+- Determine the distribution of the test statistic under $H_0$
+- Calculate the critical region or p-value
+
+## Example: Two-sided test for $\beta_1$
+- $H_0: \beta_1 = 0$
+- $H_1: \beta_1 \neq 0$
+- Test statistic: $t = \frac{\hat{\beta_1} - \hat{\beta_{1}}_{(under H_0)}}{\sqrt{\widehat{Var(\hat{\beta_1})}}}$
+- The distribution of the test statistic is $t_{n-2}$
+- Critical region: $|t| > t_{1-\alpha/2; n-2}$ - Reject if $t$ falls in the critical region
+- P-value: $2P(t_{n-2} > |t|)$ - Reject if p-value < $\alpha$
+
 
 # Prediction 
+- When using SLR to predict, there are 2 sources of uncertainty
+  - Uncertainty in the estimates of the regression line
+  - Uncertainty in the estimate of the error
 
-# ANOVA
+## Mean response prediction
+- Predicting where the mean of "many" points will be at a given $x_0$
+- when $\sigma^2$ is known:
+- $\hat{\mu}_{y|x_0} \sim N\left(E(y|x_0), s^2[\frac{1}{n}+\frac{(x_0 - \bar{x})^2}{S_{xx}}]\right)$
+- when $\sigma^2$ is unknown:
+- $$\hat{\mu}_{y|x_0} \sim t_{n-2}\left(E(y|x_0), s^2[\frac{1}{n}+\frac{(x_0 - \bar{x})^2}{S_{xx}}]\right)$$
 
-# Data transformations
+## Confidence interval for mean response
+- The range in which the mean of "many" points will lie at a given $x_0$
+- Given $x_0$ and unknown variance, the 100(1-$\alpha$)% CI for $E(y|x_0)$ is
+- $$\hat{\mu}_{y|x_0} \pm t_{1-\alpha/2; n-2}\times s\sqrt{\left[\frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}\right]}$$
+
+## Prediction interval
+- The range in which a single point will lie at a given $x_0$
+- Given $x_0$ and unknown variance, the 100(1-$\alpha$)% PI for $\hat{y}_0$ is
+- $$\hat{y}_0 \pm t_{1-\alpha/2; n-2}\times s\sqrt{1 + \frac{1}{n} + \frac{(x_0 - \bar{x})^2}{S_{xx}}}$$
+- Note that the PI is wider than the CI because it accounts for the uncertainty in the error term
+- The PI gets wider with the distance from $\bar{x}$
 
 
 <!-- 
