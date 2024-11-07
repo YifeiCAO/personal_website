@@ -43,14 +43,13 @@ Taking advantage of this is actually pretty attractive, as those willing to pers
 Little first-year me, just having landed in the US, signed up for the first course. 
 First reaction: "Wow, this is pretty different to what I've seen before". 
 I did not know how to do any of the derivations that my first homework asked me for. 
-I panicked and dropped the course. I did not feel ready for this. 
+I panicked and dropped the course. 
 I decided to take a step back, I needed a better plan to be able to pull this off. 
 After all, I am lacking **years** of experience compared to the average person in a Stats PhD program.
 
 I learned that in the US, it's expected that you consult with the lecturer when you don't understand things.
-Perhaps a bit of a culture shock. 
-Things here are clearly a bit different than in the UK, were you would have very little interaction with your lecturers outside of class. 
-So maybe my approach was a less than good one from the very beginning. 
+This was perhaps a bit of a culture shock moment for me, as in the UK (where I studied before) you'd typically have little to no interaction with your lecturers outside of class. 
+So maybe my approach was a less than optimal one from the very beginning. 
 I started asking lecturers and students who had done the MSc for tips on how to prepare. 
 I studied a bit more Calculus, and started learning a bit more about how you actually prove and derive things. 
 I also learned that the course actually still has a considerable applied component,
@@ -60,9 +59,9 @@ I decided to give it another shot.
 So here we are, I've started my second year and committed to actually taking and finishing the first mathematical statistics course in the stats program. 
 With all the new things I've learned in the last year, I was actually surprised to find that I can keep up okay? 
 Proofs are still really, really hard as I still lack the intuition and experience (sometimes the neccessary knowledge) to do them myself rather than just passively consume them on the whiteboard. 
-Thankfully, for the homework problems we get, I can consult mathematical statistics books. 
-These usually cover similar problems, so I do eventually get to the solution. Maybe it's like this by design? 
-My main bottleneck is definitely that I have not fully internalized all the rules and quantities I've been learning about and again lack the practice in doing derivations. 
+Thankfully, for the homework problems we get, I can consult mathematical statistics books which often feature similar problems. Or even better, I can beg my mathy peers for help.
+Maybe it's like this by design? 
+My main bottleneck is definitely that I have not fully internalized all the rules and quantities I've been learning about and still lack some practice in doing derivations. 
 I'll definitely have to work a bit harder than the average student in my course to stay afloat.
 At the same time, wow is it satisfying to actually come up with a correct proof after a bit of struggle?!  
 
