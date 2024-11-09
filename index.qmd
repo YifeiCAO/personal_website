@@ -9,7 +9,8 @@ format:
 back-to-top-navigation: false
 ---
 
-
+<script data-goatcounter="https://lukmayer.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
 :::{.column-page}
 
