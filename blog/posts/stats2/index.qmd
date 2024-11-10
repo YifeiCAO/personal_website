@@ -1,6 +1,6 @@
 ---
-title: "Math-Stats: Linear Regression"
-description: "Linear regression via RevealJS"
+title: "Math-Stats: Simple Linear Regression"
+description: "Linear regression notes in RevealJS"
 author: "Luke"
 date: "2024-11-06"
 categories:
