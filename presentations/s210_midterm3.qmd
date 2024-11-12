@@ -100,3 +100,10 @@ Let $\mathbf{A}$ be a $k \times k$ matrix, $\mathbf{y}$ be a $k \times 1$ random
 - The distribution of $\hat{\beta}_j$ are: $$\frac{\hat{\beta}_j - \beta_j}{\sqrt{\widehat{Var(\hat{\beta}_j})}} \sim t_{n-k-1}$$
 - Thus the $100\cdot(1-\alpha)\%$ confidence interval for $\beta_j$ is: $$\hat{\beta}_j \pm t_{n-k-1, 1-\alpha/2}\cdot\sqrt{\widehat{Var(\hat{\beta}_j)}}$$
 
+## General F-test
+
+For comparing two nested models $M_{full}$ and $M_{reduced}$ we can use the F-test:
+
+F = $\frac{(SSR_{full} - SSE_{reduced})/(df_{R}(full) - df_{R}(reduced))}{SSE_{full}/df_{full}}$
+
+
