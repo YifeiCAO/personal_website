@@ -104,6 +104,10 @@ Let $\mathbf{A}$ be a $k \times k$ matrix, $\mathbf{y}$ be a $k \times 1$ random
 
 For comparing two nested models $M_{full}$ and $M_{reduced}$ we can use the F-test:
 
-F = $\frac{(SSR_{full} - SSE_{reduced})/(df_{R}(full) - df_{R}(reduced))}{SSE_{full}/df_{full}}$
+$$F = \frac{(SSE_{reduced} - SSE_{full})/(df_{E}(full) - df_{E}(reduced))}{SSE_{full}/df_{full}}$$
+
+$$F = \frac{(SSR_{full} - SSR_{reduced})/(df_{R}(full) - df_{R}(reduced))}{SSE_{full}/df_{full}}$$
+
+The two formulas are equivalent.
 
 
