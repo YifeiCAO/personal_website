@@ -66,7 +66,13 @@ Maybe more importantly, through the template I can teach you how to:
 
 ## Editing the website
 
-Change the file content to your liking. The main files you will be editing are the `_quarto.yml`, any `.qmd` files and the `styles.css` file if you're feeling adventurous. The general workflow is to make edits, and then "render" the website to see the changes. Essentially, Quarto has to translate all that markdown into HTML, and it will only do so when you tell it to. In Rstudio, there is a UI button for this, It's simply a blue arrow reading "Render" that is visible when on a `.qmd` file. In VSCode, you can use the command `Quarto: Render` to render the website. You can search for this command by pressing `Ctrl+Shift+P` and typing `Quarto: Render`. Either way, rendering the website will create a preview of the site, which your browser should open automatically. This is local to you, meaning other people cannot see the website yet. All the files that have been translated to HTML are stored in the `_site` folder. With this procedure of editing, rendering, and previewing you can simply keep tinkering on your website until you are happy with it and want to make it public. 
+Change the file content to your liking. The main files you will be editing are the `_quarto.yml`, any `.qmd` files and the `styles.css` file if you're feeling adventurous. 
+The general workflow is to make edits, and then "render" the website to see the changes. 
+Essentially, Quarto has to translate all that markdown into HTML, and it will only do so when you tell it to. 
+In Rstudio, there is a UI button for this, It's simply a blue arrow reading "Render" that is visible when on a `.qmd` file. 
+In VSCode, you can use the command `Quarto: Render` to render the website. 
+You can search for this command by pressing `Ctrl+Shift+P` and typing `Quarto: Render`. 
+Either way, rendering the website will create a preview of the site, which your browser should open automatically. This is local to you, meaning other people cannot see the website yet. All the files that have been translated to HTML are stored in the `_site` folder. With this procedure of editing, rendering, and previewing you can simply keep tinkering on your website until you are happy with it and want to make it public. 
 
 \
 
