@@ -66,16 +66,36 @@ Maybe more importantly, through the template I can teach you how to:
 
 ## Editing the website
 
-Change the file content to your liking. The main files you will be editing are the `_quarto.yml`, any `.qmd` files and the `styles.css` file if you're feeling adventurous. 
+I would recommend you look over the source files in the following order: 
+
+1) `_quarto.yml` to learn about how to configure the global settings of the website
+2) `about/index.qmd` to learn about the basic features of Quarto
+3) check out `cv/index.qmd` to learn about how to use tab-sets and embed a pdf
+4) `blog/index.qmd` to learn about how to create listed collections of posts
+5) read through the posts in the `blog/posts` folder to learn about advanced features and workflows.
+
+Now you can change the file content to your liking. 
+The main files you will be editing are the `_quarto.yml`, any `.qmd` files and the `styles.css` file if you're feeling adventurous. 
 The general workflow is to make edits, and then "render" the website to see the changes. 
 Essentially, Quarto has to translate all that markdown into HTML, and it will only do so when you tell it to. 
 In Rstudio, there is a UI button for this, It's simply a blue arrow reading "Render" that is visible when on a `.qmd` file. 
 In VSCode, you can use the command `Quarto: Render` to render the website. 
 You can search for this command by pressing `Ctrl+Shift+P` and typing `Quarto: Render`. 
-Either way, rendering the website will create a preview of the site, which your browser should open automatically. This is local to you, meaning other people cannot see the website yet. All the files that have been translated to HTML are stored in the `_site` folder. With this procedure of editing, rendering, and previewing you can simply keep tinkering on your website until you are happy with it and want to make it public. 
+Either way, rendering the website will create a preview of the site, which your browser should open automatically. 
+This is local to you, meaning other people cannot see the website yet. 
+All the files that have been translated to HTML are stored in the `_site` folder. 
+With this procedure of editing, rendering, and previewing you can simply keep tinkering on your website until you are happy with it and want to make it public. 
 
 \
 
 ## Hosting the website
 
-For other people to see your shiny new website it needs to be hosted on a server. The easiest way to do this for free is to use Github Pages. You simply head to Github, login, and create a repository with the name `yourgithubusername.github.io`. Then, you upload all the files in the `_site` folder to the repository. The easiest way to upload is to simply drag and drop all the files in that folder after clicking the upload files button on Github. Finally, go to the settings of the repository and scroll down to the Github Pages section. Here you can select the branch you want to host from and the folder. Don't worry too much about what a branch is for now - it will most likely be called `main` or `master` and the folder you want will be almost certainly be called `root` or `/`. After a view minutes, your website should be live at `www.yourgithubusername.github.io`!
+For other people to see your shiny new website it needs to be hosted on a server.
+The easiest way to do this for free is to use Github Pages.
+You simply head to Github, login, and create a repository with the name `yourgithubusername.github.io`.
+Then, you upload all the files in the `_site` folder to the repository.
+The easiest way to upload is to simply drag and drop all the files in that folder after clicking the upload files button on Github.
+Finally, go to the settings of the repository and scroll down to the Github Pages section.
+Here you can select the branch you want to host from and the folder.
+Don't worry too much about what a branch is for now - it will most likely be called `main` or `master` and the folder you want will be almost certainly be called `root` or `/`.
+After a view minutes, your website should be live at `www.yourgithubusername.github.io`!
