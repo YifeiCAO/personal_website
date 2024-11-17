@@ -57,7 +57,7 @@ If you haven't yet, just render the files to get a first feel for what the final
 Here's what my .yml file looks like:
 
 
-```{yaml, eval=F}
+```yaml
 
 project:
   type: website
@@ -127,7 +127,7 @@ Finally, in the "extensions" field I add the copy-button extension which allows 
 
 A blog is a nice place to share things in posts. In Quarto, that basically means having a list of pages on a blog index page. The pages listed on this index all sit inside a folder inside your project directory. In case you didn't realize yet, every quarto markdown document has a so-called "YAML header" which is indicated by the three hyphens that denote the beginning and ending of this header. The header specifies fields and settings for that page alone. Here's what the header looks like for my blog index.  
 
-```{yaml, eval=F}
+```yaml
 ---
 title: "Blog"
 listing:
@@ -149,7 +149,7 @@ The next couple fields add UI for sorting/filtering and the categories field all
 With this in place, here is what the header of a given blog post looks like for me:
 
 
-```{yaml, eval=F}
+```yaml
 
 ---
 title: "My first DIY web-app"
@@ -178,7 +178,7 @@ Quarto provides some templates for easily configuring a rather stylish "About th
 Here is how I set up mine: 
 
 
-```{yaml, eval=F}
+```yaml
 ---
 title: "Lukas W. Mayer"
 about:
@@ -207,37 +207,56 @@ If you want to host your finished site on Github, you need to initialize a local
 
 Because I have my website source files on a different repository on Github, I created a little shell script that I can push updates to both repositories with:  
 
-```{r, eval=F}
-
+```bash
 #!/bin/bash
 
-# Build the site with Quarto
+# --- Build the site with Quarto ---
 quarto render
 
-# Push file changes to master
-git add .
-git commit -m "Update website code"
-git push -f origin master
+# Prompt for a commit message
+echo "Enter a commit message:"
+read commit_message
 
-# Navigate to the _site directory
+# --- Push source files to the main repository (lukmayer/website.git) ---
+
+# Ensure the current directory is your main project directory (not _site)
+# Add and commit changes to the source repo
+git add .
+git commit -m "$commit_message"
+
+git remote add origin git@github.com:lukmayer/website.git
+
+# Push changes to the main repository (lukmayer/website.git)
+# Ensure 'origin' points to the source repo (lukmayer/website.git)
+git push -f origin master 
+
+
+# --- Push rendered files to the GitHub Pages repository (lukmayer.github.io.git) ---
+
+# Navigate to the _site directory (contains the rendered files)
 cd _site
 
-# Initialize a new Git repository
-git init
+# Initialize a new Git repository inside _site if it doesn't exist already
+if [ ! -d ".git" ]; then
+    git init
+    git remote add origin git@github.com:lukmayer/lukmayer.github.io.git
+else
+    git remote set-url origin git@github.com:lukmayer/lukmayer.github.io.git
+fi
+
+# Add and commit the rendered site files
 git add .
-git commit -m "Deploy updates"
+git commit -m "$commit_message"
 
-# Force push to the gh-pages branch of the GitHub Pages repository
-git remote add origin git@github.com:lukmayer/lukmayer.github.io.git
-git push -f origin master:gh-pages
+# Force push the rendered files to the gh-pages branch of the GitHub Pages repo
+git push -f origin master:gh-pages  # Ensure that 'gh-pages' is the correct branch for GitHub Pages
 
-# Clean up
+# Navigate back to the root directory of the project
 cd ..
-rm -rf _site/.git
 
 ```
 
-The script essentially just runs a couple standard commands. First, I render my website and push the source files to their repository. After this, I change to the folder with the rendered files and force push these to the repositories that hosts the website. Then I remove this nested git, just in case it causes problems with the root-level git. 
+The script essentially just runs a couple standard commands. First, I render my website and push the source files to their repository. After this, I change to the folder with the rendered files and force push these to the repositories that hosts the website. To use this, make sure that `_site` has been added to the `.gitignore` file in the main project directory. 
 
 With this script my workflow basically just becomes: 1) Make changes, 2) open terminal, 3) go to source directory, 4) run deploy.sh (the shell script). If you plan on using this script, keep in mind that your repository will be a different one than mine, which is further complicated by the fact that I use SSH, which will require a tutorial to set up if you are not familiar (search: "how to set up SSH with Github").   
 
