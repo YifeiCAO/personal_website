@@ -1,0 +1,142 @@
+---
+title: "Publications"
+description: "Lukas Mayer's research in computational cognitive science, Human-AI collaboration. Related topics include causal reasoning, inversion problems, AI alignment, data-science, software development"
+format: 
+  html:
+    callout-appearance: "default"
+    code-overflow: wrap
+    code-line-numbers: true
+    code-block-border-left: false
+---
+
+<style>
+.description {
+    display: none;
+}
+
+.callout-title-container {
+    font-size: 1.2rem;
+}
+
+.callout-title-container strong em {
+    font-size: 1.5rem;
+}
+
+
+/* Title block background */
+.callout-header {
+    background-color: #222222 !important;  /* Light gray */
+}
+
+/* Main text area background */
+.callout-body-container {
+    background-color: #111111;  /* White */
+}
+
+/* Optional: if you want to style the entire callout container */
+.callout {
+    border: 1px solid #dee2e6;  /* Light border */
+}
+
+</style>
+
+<script>
+  window.addEventListener("load", function() {
+    var content = document.querySelector(".quarto-content");
+    if (content) {
+      content.classList.remove("hidden");  // Remove the hidden class to allow transition
+      content.classList.add("fade-in");    // Add the fade-in class for the transition effect
+    }
+  });
+</script>
+
+:::{.column-body-outset}
+
+::: {.animate__animated .animate__fadeIn}
+
+
+## Under Review / in Progress 
+::: {.callout collapse="true"}
+
+# ***<span style="color: #00a653;">"The Calibration Gap between Model and Human Confidence in Large Language Models"</span>*** <br> Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., <span style="color: #c678dd;">Mayer, L. W.</span>, & Smyth, P. (2024) *arXiv preprint*
+---
+
+:::{.text-center}
+![](assets/confidence.png)
+:::
+
+\
+
+**<span style="color: #00a653;">Have you ever noticed that ChatGPT speaks like a know-it-all?</span>** In this paper, we show that there is misalignment in the confidence LLM's are perceived to have in their answers, and what their internal confidence values reflect. In essence, LLM's routinely appear more confident than they should, despite model weights accurately reflecting the uncertainty associated with the answer. We also show how prompting LLM's to include appropriate uncertainty language in the answer text diminishes this gap between perceived and actual confidence considerably.
+
+::: {.text-center}
+<a href="https://arxiv.org/pdf/2401.13835" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #00a653; text-align: center; text-decoration: none; border-radius: 5px;">Link to the paper</a>
+
+:::
+
+Citation:
+
+```apa
+Steyvers, M., Tejeda, H., Kumar, A., Belem, C., Karny, S., Hu, X., Mayer, L. W. & Smyth, P. (2024). The calibration gap between model and human confidence in large language models. arXiv preprint arXiv:2401.13835.
+```
+:::
+
+
+::: {.callout collapse="true"}
+# ***<span style="color: #00a653;">"Waste not want not: Computational methods to maximise attendance in group research"</span>*** <br> <span style="color: #c678dd;">Mayer, L. W.</span>, Bocheva, D., Hinds, J., Brown, O., Piwek, L., Ellis, D. (under Review) *Behavior Research Methods*. 
+
+
+:::{.text-center}
+![](assets/sets.png)
+:::
+
+\
+
+**<span style="color: #00a653;">Do your studies rely on groups of people?</span>** Recruiting participants for group sessions can be arduous, often costing a lot of time, effort, and resources. In this work, we demonstrate the complete lack of tools that can appropriately allocate a sample of interested participants to a set of group sessions. We then mathematically derive metrics that can quantify the effectiveness of any tool attempting to solve this problem. Finally, we develop an algorithm that outperforms any existing utility on this task using simulation and a large-scale pre-registered user study. Our scheduling utility is free and open-source, available to anyone through a web-applet. 
+
+
+::: {.text-center}
+<a href="https://lukmayer.github.io/appointment_sets" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #00a653; text-align: center; text-decoration: none; border-radius: 5px;">Link to the web-app</a>
+
+:::
+
+:::
+
+## 2024
+
+
+::: {.callout collapse="true"}
+
+# ***<span style="color: #00a653;">"Learning with AI Assistance: A Path to Better Task Performance or Dependence?"</span>*** <br> Karny, S., <span style="color: #c678dd;">Mayer, L. W.</span>, Ayoub, J., Song, M., Su, H., Tian, D., Moradi-Pari, E., & Steyvers, M. (2024). *Proceedings of the ACM Collective Intelligence Conference*. 
+
+
+:::{.text-center}
+<div style="background-color: white; display: inline-block;">
+  ![](assets/assistance.png)
+</div>
+:::
+
+\
+
+**<span style="color: #00a653;">Is receiving AI assistance on tasks degrading our skills, or improving them?</span>** To answer this question, we developed a gamified task in which participants needed to intercept moving, point-valued targets before they escape. During the game, an AI assistant suggests optimal actions to take to maximize player score. We manipulated when people were given this assistance to see whether its presence harmed or boosted their learning during the task. Despite many fears of skill degradation and/or hopes of AI-boosted learning, we find that in our task, AI assistance neither harms nor enhances learning. This finding highlights the possibility that there exist a subset of tasks in which AI assistance can be provided risk-free, which we hypothesize may include many tasks that do not require high-level reasoning. 
+
+
+
+
+::: {.text-center}
+<a href="https://dl.acm.org/doi/pdf/10.1145/3643562.3672610" class="button" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #00a653; text-align: center; text-decoration: none; border-radius: 5px;">Link to the paper</a>
+
+:::
+
+Citation:
+
+```apa
+Karny, S., Mayer, L. W., Ayoub, J., Song, M., Su, H., Tian, D., ... & Steyvers, M. (2024, June). Learning with AI Assistance: A Path to Better Task Performance or Dependence?. In Proceedings of the ACM Collective Intelligence Conference (pp. 10-17).
+```
+
+:::
+
+
+
+:::
+:::

@@ -459,3 +459,96 @@ body div.sourceCode {
 }
 
 
+/* Fix spacing */
+.nav-link {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Optional: Add some hover effects */
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  } 
+
+/* Add gap coverage between nav-link and dropdown */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px; /* Increased rounded corners */
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+}
+
+/* Round the corners of first and last items to match container */
+.dropdown-item:first-child {
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+}
+
+.dropdown-item:last-child {
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+/* Create invisible gap coverage */
+.nav-item.dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust based on your needs */
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+}
+
+/* Rest of your existing styles remain the same */
+.dropdown-item {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+
+/* Dropdown item hover state */
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Change this to your preferred highlight color */
+    color: white;
+}
+
+/* Adjust the hover trigger area */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Optional: Add a small delay before hiding */
+.dropdown-menu {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.dropdown:not(:hover) .dropdown-menu {
+    transition-delay: 0.1s;
+}
+
