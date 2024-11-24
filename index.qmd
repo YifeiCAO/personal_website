@@ -40,17 +40,24 @@ I'm Luke, and I'm currently a PhD Student in Cognitive Science in [Mark Steyvers
 \
 
 <div class="button-group" style="display: flex; gap: 20px;">
-
+<!-- Mail -->
 <a href="mailto:willuk@vivaldi.net" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
     <i class="bi bi-envelope" style="font-size: 1.5rem; margin-right: 8px;"></i>Email
 </a>
-
+<!-- Github -->
 <a href="https://github.com/lukmayer" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
     <i class="bi bi-github" style="font-size: 1.5rem; margin-right: 8px;"></i>Github
 </a>
-
+<!-- Medium -->
 <a href="https://medium.com/@willuk" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
     <i class="bi bi-medium" style="font-size: 1.5rem; margin-right: 8px;"></i>Medium
+</a>
+<!-- Mastodon -->
+<a href="https://vivaldi.social/@willuk" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">
+    <i class="bi bi-mastodon" style="font-size: 1.5rem; margin-right: 8px;"></i>Mastodon
+</a>
+<!-- Google scholar -->
+<a href="https://scholar.google.com/citations?user=KsH37lMAAAAJ" class="button-link" target="_blank" style="text-decoration: none; color: white; background-color: #222; padding: 10px 20px; border-radius: 5px; display: inline-block; font-size: 1.2rem; text-align: center;">{{< ai google-scholar size=xl >}}</i> Google Scholar
 </a>
 
 </div>
@@ -91,55 +98,64 @@ I'm Luke, and I'm currently a PhD Student in Cognitive Science in [Mark Steyvers
 
 
 .button-link {
-    background-color: #222; /* Default button background */
-    color: white; /* Default text color */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
-    padding: 10px 20px; /* Padding for the button look */
-    border-radius: 5px; /* Rounded corners */
+    background-color: #222;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+    padding: 10px 20px;
+    border-radius: 5px;
     display: inline-block;
     font-size: 1.2rem;
     text-align: center;
-    text-decoration: none; /* No underline */
+    text-decoration: none;
+    /* Add margin to account for scale transform */
+    margin: 5px;
+    /* Ensure consistent height behavior */
+    line-height: 1.5;
+    /* Add transform-origin to control scaling */
+    transform-origin: center;
+    /* Add z-index handling for hover state */
+    position: relative;
+    z-index: 1;
 }
 
 .button-link:hover {
-    background-color: #444 !important; /* Change to lighter color on hover */
-    transform: scale(1.2); /* Slightly increase size on hover */
+    background-color: #444 !important;
+    transform: scale(1.2);
+    z-index: 2; /* Bring hovered button to front */
 }
 
 /* Default desktop view */
 .button-group {
-    display: flex; /* Keep the buttons in a row by default */
-    gap: 20px; /* Space between buttons */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: stretch; /* Changed to stretch to handle different heights */
+    margin: -10px; /* Compensate for button margins */
 }
 
-
 @media (max-width: 768px) {
-  /* Adjust the layout for mobile screens (small screens) */
-  
-  .columns {
-    flex-direction: column; /* Stack the columns vertically on mobile */
-  }
-
-  .column {
-    width: 100% !important; /* Make each column take up full width on mobile */
-    padding: 0; /* Adjust padding for mobile */
-  }
-
-  /* Make the button links stack vertically with some spacing */
-  .button-link {
-    display: block;
-    width: 100%; /* Make buttons full width */
-    margin-bottom: 10px; /* Add space between buttons */
-    text-align: center;
-  }
-
-  .button-group {
-        flex-direction: column; /* Stack buttons vertically on small screens */
-        gap: 10px; /* Space between buttons when stacked */
-        width: 100%; /* Ensure the group takes full width */
+    .columns {
+        flex-direction: column;
     }
 
+    .column {
+        width: 100% !important;
+        padding: 0;
+    }
+
+    .button-link {
+        display: block;
+        width: calc(100% - 20px); /* Account for margins */
+        margin: 10px;
+        text-align: center;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 0; /* Remove gap since we're using margins */
+        width: 100%;
+        margin: 0; /* Reset margin for mobile */
+    }
 }
 
 
